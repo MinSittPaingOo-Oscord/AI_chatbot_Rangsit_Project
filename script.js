@@ -8,9 +8,10 @@ function appendMessage(sender, text) {
   const chatDiv = document.createElement("div");
   chatDiv.classList.add("chat");
 
+  // Profile (U = user, B = bot)
   const profile = document.createElement("div");
   profile.classList.add("profile", sender);
-  profile.innerHTML = sender === "user" ? "👤" : "🤖";  
+  profile.textContent = sender === "user" ? "👤" : "🤖";
 
   // Message bubble
   const message = document.createElement("div");
@@ -27,7 +28,7 @@ function appendMessage(sender, text) {
 
 // Function to get bot response from Gemini API
 async function getBotResponse(userMessage) {
-  const API_KEY = "AIzaSyDeYXylJMOMDYKy6E-jKSLj1QJf7NKXWY0";
+  const API_KEY = "AIzaSyDSd2l1BEPRp6EGKW5Aq28GzkwFs5iUuCo";
   const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
   // Show "typing..." placeholder
